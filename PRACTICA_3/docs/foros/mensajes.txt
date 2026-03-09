@@ -1,0 +1,110 @@
+Duda practica 3
+por DEREK FRANCISCO ORELLANA IBÁÑEZ - lunes, 2 de marzo de 2026, 20:19
+Número de respuestas: 1
+Son solo capturas de las dailys y backlog dentro del mismo informe?
+
+Imagen de KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA
+En respuesta a DEREK FRANCISCO ORELLANA IBÁÑEZ
+Re: Duda practica 3
+por KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA - lunes, 2 de marzo de 2026, 21:55
+Hola Derek, no. No es solo capturas de dailys y backlog.
+
+Lo requerido es que en el Informe Ejecutivo (PDF) incluyas la planeación ágil (backlog + 2 sprints con tareas/procesos clave) y sus evidencias, y además entregar el enlace a la web funcional con carrito y simulación de compra.
+
+Las capturas de dailys pueden servir como evidencia, pero no son el único ni el principal requisito.
+
+Saludos
+
+
+dudua practica 3
+por RAMIRO AGUSTÍN TÉLLES CARCUZ - lunes, 2 de marzo de 2026, 20:19
+Número de respuestas: 1
+aux, cuantas dailys van a ser por sprint en la practica 3?
+
+Imagen de KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA
+En respuesta a RAMIRO AGUSTÍN TÉLLES CARCUZ
+Re: dudua practica 3
+por KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA - lunes, 2 de marzo de 2026, 21:57
+Hola Ramiro, no hay un número fijo de dailys por sprint en la Práctica 3. La guía pide planificar en 2 sprints (sin fechas específicas) y que estén definidos con tareas/procesos clave, además de entregar evidencias de los sprints.
+
+Duda practica 3
+por ANDREA ALEJANDRA PÉREZ SANDOVAL - lunes, 2 de marzo de 2026, 20:32
+Número de respuestas: 1
+Aux, podemos usar google forms como simulación de pago, igual que en la práctica 2? 
+ 
+Imagen de KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA
+En respuesta a ANDREA ALEJANDRA PÉREZ SANDOVAL
+Re: Duda practica 3
+por KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA - lunes, 2 de marzo de 2026, 21:57
+Hola Andrea, para la Práctica 3 se espera algo más formal que en la Práctica 2.
+
+Podés simular el pago, pero debe verse como una confirmación de compra dentro del flujo de la web, con mejor diseño y experiencia (esto se evaluará como parte de la calificación), no solo un Google Forms externo.
+
+Practica
+por NATALIA MARIEL CALDERÓN ECHEVERRÍA - miércoles, 4 de marzo de 2026, 15:55
+Número de respuestas: 1
+Buenas tardes aux,
+
+Tengo una duda sobre que se espera en si en la practica 3, mas que todo en el informe. ¿Como se espera la información?¿Como en el ejemplo de la practica 1 o el de la practica2 ?¿Cómo debemos de agregar el sprint(que debemos mostrar)? 
+
+Imagen de KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA
+En respuesta a NATALIA MARIEL CALDERÓN ECHEVERRÍA
+Re: Practica
+por KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA - miércoles, 4 de marzo de 2026, 16:41
+Buenas tardes Natalia
+
+En la Práctica 3 el informe se entrega como Informe Ejecutivo (PDF), con un enfoque más formal y profesional (no es exactamente el mismo formato de la Práctica 1 o 2).
+
+El informe ejecutivo debe incluir:
+
+Portada e índice
+
+Resumen ejecutivo e introducción (objetivo SMART)
+
+Competidores (mín. 10) + hallazgo principal
+
+Análisis de entorno con los frameworks solicitados (VUCA, Diamond, PEST, Five Forces, SWOT, TOWS y SOAR)
+
+Propuesta del e-commerce (3 productos: nombre, precio, descripción, beneficios/funciones)
+
+Arquitectura de información / mapa del sitio y flujo de navegación
+
+Mapa TICs (M3) con breve explicación
+
+Planificación ágil: backlog/procesos clave + 2 sprints
+
+Evidencias (capturas del sitio: productos, carrito y confirmación/simulación de compra) + enlace al sitio
+
+Conclusiones y recomendaciones
+
+Sobre los sprints: deben mostrar Sprint 1 y Sprint 2 con su objetivo y una lista de tareas/procesos (puede ser en tabla o capturas de tablero).
+
+Saludos.
+Duda practica 3
+por DEREK FRANCISCO ORELLANA IBÁÑEZ - jueves, 5 de marzo de 2026, 21:01
+Número de respuestas: 1
+Buena noche aux, con una duda
+
+Los competidores deben ser empresas o productos?
+
+Por ejemplo:
+
+En el desarrollo de app moviles, mi competidor debe ser X empresa de desarrollo de apps o
+
+mi competidor debe ser una app que esta en el mercado de X categoria? 
+
+Imagen de KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA
+En respuesta a DEREK FRANCISCO ORELLANA IBÁÑEZ
+Re: Duda practica 3
+por KHRISTIAN MANOLO JUNIOR GARCÍA PINEDA - jueves, 5 de marzo de 2026, 22:05
+Buenas noches Derek,
+
+En la Práctica 3 los competidores se entienden como referentes del mercado del e-commerce de software: pueden ser empresas/plataformas o productos/soluciones, siempre que compitan por el mismo tipo de cliente y la misma necesidad.
+
+Para tu ejemplo (apps móviles), es válido usar:
+
+Empresas/plataformas que venden o ofrecen apps/snippets/plantillas (competencia directa).
+
+Productos/soluciones similares en la categoría (competencia indirecta), si justificas la comparación.
+
+Lo importante es que expliques por qué compiten con tu propuesta y qué insight sacás de cada uno.

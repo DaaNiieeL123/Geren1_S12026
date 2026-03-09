@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --dark: #0B100B;
+  --dark-2: #141A14;
+  --dark-card: #1C241C;
+  --light: #F7F8F5;
+  --light-2: #EDEEE9;
+  --white: #FFFFFF;
+  --green: #2D7A3A;
+  --green-hover: #236130;
+  --green-light: #E8F5EB;
+  --text-dark: #111311;
+  --text-mid: #4A4F4A;
+  --text-muted: #8A8F8A;
+
+  --font-syne: 'Syne', sans-serif;
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-dm-mono: 'DM Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Make Tailwind aware of these colors under the standard namespace */
+@theme {
+  --color-dark: var(--dark);
+  --color-dark-2: var(--dark-2);
+  --color-dark-card: var(--dark-card);
+  --color-light: var(--light);
+  --color-light-2: var(--light-2);
+  --color-green: var(--green);
+  --color-green-hover: var(--green-hover);
+  --color-green-light: var(--green-light);
+  --color-text-dark: var(--text-dark);
+  --color-text-mid: var(--text-mid);
+  --color-text-muted: var(--text-muted);
+
+  --font-syne: var(--font-syne);
+  --font-dm-sans: var(--font-dm-sans);
+  --font-dm-mono: var(--font-dm-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--light);
+  color: var(--text-dark);
+  font-family: var(--font-dm-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-syne);
+  font-weight: 700;
+}
+
+/* IntersectionObserver Animations */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger utilities for IntersectionObserver */
+[data-animate="stagger"]> :nth-child(1) {
+  transition-delay: 0ms;
+}
+
+[data-animate="stagger"]> :nth-child(2) {
+  transition-delay: 120ms;
+}
+
+[data-animate="stagger"]> :nth-child(3) {
+  transition-delay: 240ms;
+}
+
+[data-animate="stagger"]> :nth-child(4) {
+  transition-delay: 360ms;
+}
+
+[data-animate="stagger"]> :nth-child(5) {
+  transition-delay: 480ms;
+}
+
+/* Custom Keyframes */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes draw-circle {
+  0% {
+    stroke-dashoffset: 160;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes draw-check {
+  0% {
+    stroke-dashoffset: 40;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes image-hero-load {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
