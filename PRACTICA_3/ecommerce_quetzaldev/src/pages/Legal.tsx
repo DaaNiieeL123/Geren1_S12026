@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
 import { ShieldCheck, FileText, Scale } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export const Legal = () => {
+    useScrollAnimation();
+
     useEffect(() => {
-        // Ensuring we scroll to top on mount if no hash is present, 
-        // though ScrollToTop component does this, it's a good fallback.
         if (!window.location.hash) {
             window.scrollTo(0, 0);
         }
@@ -12,13 +13,13 @@ export const Legal = () => {
 
     return (
         <div className="font-dm-sans bg-[#F7F8F5] min-h-screen">
-            {/* Dark Hero Strip (Duotono) */}
+            {/* Dark Hero Strip */}
             <div className="bg-[#0B100B] pt-32 lg:pt-40 pb-20 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h1 className="text-4xl md:text-5xl font-syne font-bold text-white tracking-tight mb-4">
+                    <h1 data-animate className="text-4xl md:text-5xl font-syne font-bold text-white tracking-tight mb-4">
                         Centro Legal y Privacidad
                     </h1>
-                    <p className="text-lg text-[#A1A1AA]">
+                    <p data-animate className="text-lg text-[#A1A1AA]" style={{ transitionDelay: '150ms' }}>
                         Información transparente sobre cómo manejamos tus datos y nuestros términos de servicio.
                     </p>
                 </div>
@@ -27,7 +28,7 @@ export const Legal = () => {
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 pb-24">
 
                 {/* Table of Contents */}
-                <div className="bg-white rounded-[16px] p-6 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 mb-12 flex flex-col md:flex-row items-center justify-center gap-6 text-[14px] text-[#2D7A3A] font-medium font-dm-sans">
+                <div data-animate className="bg-white rounded-[16px] p-6 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 mb-12 flex flex-col md:flex-row items-center justify-center gap-6 text-[14px] text-[#2D7A3A] font-medium font-dm-sans">
                     <a href="#privacidad" className="hover:text-[#236130] hover:underline flex items-center gap-1">→ Política de Privacidad</a>
                     <a href="#terminos" className="hover:text-[#236130] hover:underline flex items-center gap-1">→ Términos de Uso</a>
                     <a href="#aviso-legal" className="hover:text-[#236130] hover:underline flex items-center gap-1">→ Aviso Legal</a>
@@ -35,7 +36,7 @@ export const Legal = () => {
 
                 <div className="space-y-16">
                     {/* Política de Privacidad */}
-                    <section id="privacidad" className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
+                    <section id="privacidad" data-animate className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
                         <div className="flex items-start sm:items-center gap-4 mb-4">
                             <div className="w-[60px] h-[60px] bg-[#E8F5EB] rounded-full flex items-center justify-center text-[#2D7A3A] shrink-0 p-[10px]">
                                 <ShieldCheck size={40} strokeWidth={1.5} />
@@ -65,7 +66,7 @@ export const Legal = () => {
                     </section>
 
                     {/* Términos de Uso */}
-                    <section id="terminos" className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
+                    <section id="terminos" data-animate className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
                         <div className="flex items-start sm:items-center gap-4 mb-4">
                             <div className="w-[60px] h-[60px] bg-[#E8F5EB] rounded-full flex items-center justify-center text-[#2D7A3A] shrink-0 p-[10px]">
                                 <FileText size={40} strokeWidth={1.5} />
@@ -91,7 +92,7 @@ export const Legal = () => {
                     </section>
 
                     {/* Legal */}
-                    <section id="aviso-legal" className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
+                    <section id="aviso-legal" data-animate className="bg-white rounded-[24px] p-8 md:p-12 shadow-[0_2px_16px_rgba(0,0,0,0.04)] border border-gray-100 border-l-[4px] border-l-[#2D7A3A]">
                         <div className="flex items-start sm:items-center gap-4 mb-4">
                             <div className="w-[60px] h-[60px] bg-[#E8F5EB] rounded-full flex items-center justify-center text-[#2D7A3A] shrink-0 p-[10px]">
                                 <Scale size={40} strokeWidth={1.5} />

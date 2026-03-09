@@ -1,6 +1,19 @@
 # Geren1 S1-2026 - Practica 3
 
 Repositorio de la Practica 3 del curso de Sistemas Gerenciales I, ciclo S1-2026.
+Grupo 21 — Facultad de Ingenieria, Universidad San Carlos de Guatemala.
+
+## Sitio en Produccion
+
+https://geren1-s12026.pages.dev
+
+## Integrantes
+
+| Carne | Nombre |
+|---|---|
+| 202004712 | Luis Emilio Rivera Yurrita |
+| 202004762 | Angel Guillermo Arreaga Barrientos |
+| 202203806 | Hector Daniel Ortiz Osorio |
 
 ## Contenido
 

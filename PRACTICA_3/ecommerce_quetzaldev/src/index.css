@@ -49,7 +49,7 @@ body {
   font-family: var(--font-dm-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Remove blue tap highlight on mobile */
+  /* Remove the blue flash on tap on mobile without affecting layout */
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -63,28 +63,19 @@ h6 {
   font-weight: 700;
 }
 
-/* Ensure all interactive elements meet minimum 44px touch target (Apple HIG) */
-button,
-a,
-[role="button"] {
-  min-height: 44px;
-  min-width: 44px;
-}
-
-/* IntersectionObserver Animations */
+/* IntersectionObserver Animations
+   NOTE: will-change is intentionally NOT set here.
+   Setting it on many elements at once creates excess GPU layers and slows the page.
+   The browser compositor handles these transitions fine without it. */
 [data-animate] {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  /* Promote to GPU compositor layer before animation starts — prevents jank on mobile */
-  will-change: opacity, transform;
 }
 
 [data-animate].visible {
   opacity: 1;
   transform: translateY(0);
-  /* Release GPU layer hint once animation is done */
-  will-change: auto;
 }
 
 /* Stagger utilities for IntersectionObserver */
@@ -108,23 +99,9 @@ a,
   transition-delay: 480ms;
 }
 
-/* Respect OS-level "reduce motion" setting — disables all animations */
-@media (prefers-reduced-motion: reduce) {
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  [data-animate] {
-    opacity: 1;
-    transform: none;
-    will-change: auto;
-  }
+/* Page transition — applied via .page-transition class on route wrapper */
+.page-transition {
+  animation: page-in 0.28s ease-out both;
 }
 
 /* Custom Keyframes */
@@ -187,5 +164,17 @@ a,
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+
+@keyframes page-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

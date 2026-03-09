@@ -29,3 +29,8 @@ Thumbs.db
 # Cache
 .cache/
 .eslintcache
+
+# Documentacion interna (no requerida en el repo)
+PRACTICA_3/docs/foros/
+PRACTICA_3/docs/Practica3.md
+PRACTICA_3/docs/*.pdf

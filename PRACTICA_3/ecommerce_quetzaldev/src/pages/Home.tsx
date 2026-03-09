@@ -2,6 +2,19 @@ import { Link } from 'react-router-dom';
 import { ShoppingBag, Terminal, Code2, Smartphone, CheckCircle2, ArrowRight } from 'lucide-react';
 import imgHero from '../assets/hero-corporate.png';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useAnimatedNumber } from '../hooks/useAnimatedNumber';
+
+const StatCounter = ({ end, label, suffix = '' }: { end: number; label: string; suffix?: string }) => {
+    const value = useAnimatedNumber(end, 1200);
+    return (
+        <div className="flex flex-col items-center gap-1 px-4">
+            <span className="text-4xl md:text-5xl font-syne font-bold text-[#0B100B] tracking-tight">
+                {Math.round(value)}{suffix}
+            </span>
+            <span className="text-[13px] font-dm-mono uppercase tracking-[0.1em] text-[#8A8F8A] text-center">{label}</span>
+        </div>
+    );
+};
 
 export const Home = () => {
     useScrollAnimation();
@@ -10,7 +23,6 @@ export const Home = () => {
         <div className="flex flex-col">
             {/* Hero Section */}
             <section className="relative bg-[#0B100B] text-white min-h-screen pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden border-b border-white/5 flex items-center">
-                {/* Subtle animated background */}
                 <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_20%_50%,rgba(45,122,58,0.15)_0%,transparent_60%)] animate-[pulse-glow_6s_ease-in-out_infinite_alternate]"></div>
 
                 <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full">
@@ -94,6 +106,15 @@ export const Home = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            {/* Stats Bar */}
+            <section className="bg-white border-b border-black/5 py-14 px-4">
+                <div className="max-w-3xl mx-auto grid grid-cols-3 gap-4 divide-x divide-black/5" data-animate>
+                    <StatCounter end={3} label="Productos Listos" />
+                    <StatCounter end={6} label="Meses de Soporte" />
+                    <StatCounter end={100} label="Codigo Fuente" suffix="%" />
                 </div>
             </section>
 

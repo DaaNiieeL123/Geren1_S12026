@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import { Layout } from './components/Layout';
@@ -13,6 +13,7 @@ const Checkout = lazy(() => import('./pages/Checkout').then(m => ({ default: m.C
 const Confirmation = lazy(() => import('./pages/Confirmation').then(m => ({ default: m.Confirmation })));
 const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
 const Legal = lazy(() => import('./pages/Legal').then(m => ({ default: m.Legal })));
+const NotFound = lazy(() => import('./pages/NotFound').then(m => ({ default: m.NotFound })));
 
 // Minimal loading fallback shown while a page chunk is fetching
 const PageLoader = () => (
@@ -21,6 +22,29 @@ const PageLoader = () => (
   </div>
 );
 
+// Wrapper that re-mounts on each route change to trigger the page-in animation
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <div key={location.pathname} className="page-transition">
+      <Suspense fallback={<PageLoader />}>
+        <Routes location={location}>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Catalog />} />
+          <Route path="/carrito" element={<Cart />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/confirmacion" element={<Confirmation />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="/legal" element={<Legal />} />
+          <Route path="/privacidad" element={<Legal />} />
+          <Route path="/terminos" element={<Legal />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Suspense>
+    </div>
+  );
+};
+
 function App() {
   return (
     <Router>
@@ -28,19 +52,7 @@ function App() {
       <CartProvider>
         <ToastProvider>
           <Layout>
-            <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/catalogo" element={<Catalog />} />
-                <Route path="/carrito" element={<Cart />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/confirmacion" element={<Confirmation />} />
-                <Route path="/nosotros" element={<About />} />
-                <Route path="/legal" element={<Legal />} />
-                <Route path="/privacidad" element={<Legal />} />
-                <Route path="/terminos" element={<Legal />} />
-              </Routes>
-            </Suspense>
+            <AnimatedRoutes />
           </Layout>
         </ToastProvider>
       </CartProvider>

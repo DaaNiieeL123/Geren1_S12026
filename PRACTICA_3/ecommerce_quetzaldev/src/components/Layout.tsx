@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, MapPin } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
+import { ScrollToTopButton } from './ScrollToTopButton';
 
 import logoImg from '../assets/LogoOficial.png';
 
@@ -117,6 +118,8 @@ export const Layout = ({ children }: { children: ReactNode }) => {
             <main className="flex-grow">
                 {children}
             </main>
+
+            <ScrollToTopButton />
 
             <footer className="bg-[#0B100B] text-white pt-16 pb-10 text-sm border-t border-white/5 font-dm-sans">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
