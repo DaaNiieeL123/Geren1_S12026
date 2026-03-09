@@ -1,4 +1,3 @@
-// C:\Users\danie\Desktop\PRACTICA2 GEREN1\PRACTICA_3\ecommerce_quetzaldev\src\context\CartContext.tsx
 import { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { Product } from '../data/products';

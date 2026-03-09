@@ -1,4 +1,3 @@
-// C:\Users\danie\Desktop\PRACTICA2 GEREN1\PRACTICA_3\ecommerce_quetzaldev\src\data\products.ts
 import imgAgro from '../assets/agro-erp.png';
 import imgMuni from '../assets/muni-web.png';
 import imgRemesa from '../assets/remesa-app.png';

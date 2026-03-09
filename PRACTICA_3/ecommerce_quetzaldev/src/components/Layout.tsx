@@ -1,4 +1,3 @@
-// C:\Users\danie\Desktop\PRACTICA2 GEREN1\PRACTICA_3\ecommerce_quetzaldev\src\components\Layout.tsx
 import type { ReactNode } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ShoppingCart, Menu, X, MapPin } from 'lucide-react';

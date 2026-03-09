@@ -1,17 +1,25 @@
-// C:\Users\danie\Desktop\PRACTICA2 GEREN1\PRACTICA_3\ecommerce_quetzaldev\src\App.tsx
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import { Layout } from './components/Layout';
-import { Home } from './pages/Home';
-import { Catalog } from './pages/Catalog';
-import { Cart } from './pages/Cart';
-import { Checkout } from './pages/Checkout';
-import { Confirmation } from './pages/Confirmation';
-import { About } from './pages/About';
-import { Legal } from './pages/Legal';
-
 import { ScrollToTop } from './components/ScrollToTop';
+
+// Lazy-loaded pages — each page is a separate JS chunk loaded on demand
+const Home = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const Catalog = lazy(() => import('./pages/Catalog').then(m => ({ default: m.Catalog })));
+const Cart = lazy(() => import('./pages/Cart').then(m => ({ default: m.Cart })));
+const Checkout = lazy(() => import('./pages/Checkout').then(m => ({ default: m.Checkout })));
+const Confirmation = lazy(() => import('./pages/Confirmation').then(m => ({ default: m.Confirmation })));
+const About = lazy(() => import('./pages/About').then(m => ({ default: m.About })));
+const Legal = lazy(() => import('./pages/Legal').then(m => ({ default: m.Legal })));
+
+// Minimal loading fallback shown while a page chunk is fetching
+const PageLoader = () => (
+  <div className="flex items-center justify-center min-h-screen bg-[#F7F8F5]">
+    <div className="w-8 h-8 border-[3px] border-[#2D7A3A]/20 border-t-[#2D7A3A] rounded-full animate-spin" />
+  </div>
+);
 
 function App() {
   return (
@@ -20,17 +28,19 @@ function App() {
       <CartProvider>
         <ToastProvider>
           <Layout>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/catalogo" element={<Catalog />} />
-              <Route path="/carrito" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/confirmacion" element={<Confirmation />} />
-              <Route path="/nosotros" element={<About />} />
-              <Route path="/legal" element={<Legal />} />
-              <Route path="/privacidad" element={<Legal />} />
-              <Route path="/terminos" element={<Legal />} />
-            </Routes>
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/catalogo" element={<Catalog />} />
+                <Route path="/carrito" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/confirmacion" element={<Confirmation />} />
+                <Route path="/nosotros" element={<About />} />
+                <Route path="/legal" element={<Legal />} />
+                <Route path="/privacidad" element={<Legal />} />
+                <Route path="/terminos" element={<Legal />} />
+              </Routes>
+            </Suspense>
           </Layout>
         </ToastProvider>
       </CartProvider>
@@ -39,4 +49,3 @@ function App() {
 }
 
 export default App;
-

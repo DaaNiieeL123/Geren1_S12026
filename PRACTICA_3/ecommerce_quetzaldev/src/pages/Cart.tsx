@@ -1,4 +1,3 @@
-// C:\Users\danie\Desktop\PRACTICA2 GEREN1\PRACTICA_3\ecommerce_quetzaldev\src\pages\Cart.tsx
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { Trash2, Plus, Minus, ShoppingCart, Lock, BadgeCheck, MapPin } from 'lucide-react';
